@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A91F845B2437FF0300CF8B81 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91F845A2437FF0300CF8B81 /* SettingView.swift */; };
+		A91F845D243820AF00CF8B81 /* SettingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91F845C243820AF00CF8B81 /* SettingStore.swift */; };
+		A91F8461243A47CC00CF8B81 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91F8460243A47CC00CF8B81 /* Setting.swift */; };
+		A99CB66824240F1B0077A185 /* NumberFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CB66724240F1B0077A185 /* NumberFormatter+Ext.swift */; };
 		A9A226CD24219B7F00BAF996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A226CC24219B7F00BAF996 /* AppDelegate.swift */; };
 		A9A226CF24219B7F00BAF996 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A226CE24219B7F00BAF996 /* SceneDelegate.swift */; };
 		A9A226D124219B7F00BAF996 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A226D024219B7F00BAF996 /* ContentView.swift */; };
@@ -15,6 +19,19 @@
 		A9A226D924219B8300BAF996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9A226D724219B8300BAF996 /* LaunchScreen.storyboard */; };
 		A9A226E424219B8300BAF996 /* CONVID_19_NATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A226E324219B8300BAF996 /* CONVID_19_NATests.swift */; };
 		A9A226EF24219B8300BAF996 /* CONVID_19_NAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A226EE24219B8300BAF996 /* CONVID_19_NAUITests.swift */; };
+		A9C8D0AB242AA32E00EA66FD /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99CB67224255CBE0077A185 /* NotificationCenter.framework */; };
+		A9C8D0AE242AA32E00EA66FD /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8D0AD242AA32E00EA66FD /* TodayViewController.swift */; };
+		A9C8D0B1242AA32E00EA66FD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C8D0AF242AA32E00EA66FD /* MainInterface.storyboard */; };
+		A9C8D0B5242AA32E00EA66FD /* CONVID-19.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A9C8D0AA242AA32E00EA66FD /* CONVID-19.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A9C8D0C2242AE8EA00EA66FD /* CONVID_19DataKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A9C8D0C0242AE8EA00EA66FD /* CONVID_19DataKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9C8D0C5242AE8EA00EA66FD /* CONVID_19DataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C8D0BE242AE8EA00EA66FD /* CONVID_19DataKit.framework */; };
+		A9C8D0C6242AE8EA00EA66FD /* CONVID_19DataKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9C8D0BE242AE8EA00EA66FD /* CONVID_19DataKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A9C8D0CB242AEA3000EA66FD /* ConvidDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CB66A242410EB0077A185 /* ConvidDataStore.swift */; };
+		A9C8D0CC242AEA5300EA66FD /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CB66524240EDE0077A185 /* Date+Ext.swift */; };
+		A9C8D0CD242B81FF00EA66FD /* CONVID_19DataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C8D0BE242AE8EA00EA66FD /* CONVID_19DataKit.framework */; };
+		A9C8D0CE242B81FF00EA66FD /* CONVID_19DataKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9C8D0BE242AE8EA00EA66FD /* CONVID_19DataKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A9E43459243CA669005FA36C /* LocationMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E43458243CA669005FA36C /* LocationMgr.swift */; };
+		A9E43462243E2F6D005FA36C /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E43461243E2F6D005FA36C /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,9 +49,73 @@
 			remoteGlobalIDString = A9A226C824219B7F00BAF996;
 			remoteInfo = "CONVID-19-NA";
 		};
+		A9C8D0B3242AA32E00EA66FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9A226C124219B7F00BAF996 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9C8D0A9242AA32E00EA66FD;
+			remoteInfo = "CONVID-19";
+		};
+		A9C8D0C3242AE8EA00EA66FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9A226C124219B7F00BAF996 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9C8D0BD242AE8EA00EA66FD;
+			remoteInfo = "CONVID-19DataKit";
+		};
+		A9C8D0CF242B81FF00EA66FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9A226C124219B7F00BAF996 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9C8D0BD242AE8EA00EA66FD;
+			remoteInfo = "CONVID-19DataKit";
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A99CB68124255CBE0077A185 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A9C8D0B5242AA32E00EA66FD /* CONVID-19.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9C8D0CA242AE8EA00EA66FD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A9C8D0C6242AE8EA00EA66FD /* CONVID_19DataKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9C8D0D1242B81FF00EA66FD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A9C8D0CE242B81FF00EA66FD /* CONVID_19DataKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A91F845A2437FF0300CF8B81 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		A91F845C243820AF00CF8B81 /* SettingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingStore.swift; sourceTree = "<group>"; };
+		A91F8460243A47CC00CF8B81 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		A99CB66524240EDE0077A185 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		A99CB66724240F1B0077A185 /* NumberFormatter+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Ext.swift"; sourceTree = "<group>"; };
+		A99CB66A242410EB0077A185 /* ConvidDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvidDataStore.swift; sourceTree = "<group>"; };
+		A99CB67224255CBE0077A185 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		A9A226C924219B7F00BAF996 /* CONVID-19-NA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CONVID-19-NA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A226CC24219B7F00BAF996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9A226CE24219B7F00BAF996 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +130,17 @@
 		A9A226EA24219B8300BAF996 /* CONVID-19-NAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CONVID-19-NAUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A226EE24219B8300BAF996 /* CONVID_19_NAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CONVID_19_NAUITests.swift; sourceTree = "<group>"; };
 		A9A226F024219B8300BAF996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9C8D0AA242AA32E00EA66FD /* CONVID-19.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CONVID-19.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9C8D0AD242AA32E00EA66FD /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		A9C8D0B0242AA32E00EA66FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		A9C8D0B2242AA32E00EA66FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9C8D0BE242AE8EA00EA66FD /* CONVID_19DataKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CONVID_19DataKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9C8D0C0242AE8EA00EA66FD /* CONVID_19DataKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CONVID_19DataKit.h; sourceTree = "<group>"; };
+		A9C8D0C1242AE8EA00EA66FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9C8D0D2242C33E600EA66FD /* CONVID-19-NADebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CONVID-19-NADebug.entitlements"; sourceTree = "<group>"; };
+		A9C8D0D3242C342100EA66FD /* CONVID-19Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CONVID-19Debug.entitlements"; sourceTree = "<group>"; };
+		A9E43458243CA669005FA36C /* LocationMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMgr.swift; sourceTree = "<group>"; };
+		A9E43461243E2F6D005FA36C /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C8D0C5242AE8EA00EA66FD /* CONVID_19DataKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,15 +166,66 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A9C8D0A7242AA32E00EA66FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9C8D0CD242B81FF00EA66FD /* CONVID_19DataKit.framework in Frameworks */,
+				A9C8D0AB242AA32E00EA66FD /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9C8D0BB242AE8EA00EA66FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A91F8466243BEC4500CF8B81 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				A9E43458243CA669005FA36C /* LocationMgr.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		A99CB66424240EB00077A185 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A99CB66724240F1B0077A185 /* NumberFormatter+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A99CB6692424108E0077A185 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A91F8460243A47CC00CF8B81 /* Setting.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A99CB67124255CBE0077A185 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A99CB67224255CBE0077A185 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A9A226C024219B7F00BAF996 = {
 			isa = PBXGroup;
 			children = (
 				A9A226CB24219B7F00BAF996 /* CONVID-19-NA */,
 				A9A226E224219B8300BAF996 /* CONVID-19-NATests */,
 				A9A226ED24219B8300BAF996 /* CONVID-19-NAUITests */,
+				A9C8D0AC242AA32E00EA66FD /* CONVID-19 */,
+				A9C8D0BF242AE8EA00EA66FD /* CONVID-19DataKit */,
+				A99CB67124255CBE0077A185 /* Frameworks */,
 				A9A226CA24219B7F00BAF996 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +236,8 @@
 				A9A226C924219B7F00BAF996 /* CONVID-19-NA.app */,
 				A9A226DF24219B8300BAF996 /* CONVID-19-NATests.xctest */,
 				A9A226EA24219B8300BAF996 /* CONVID-19-NAUITests.xctest */,
+				A9C8D0AA242AA32E00EA66FD /* CONVID-19.appex */,
+				A9C8D0BE242AE8EA00EA66FD /* CONVID_19DataKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,9 +245,15 @@
 		A9A226CB24219B7F00BAF996 /* CONVID-19-NA */ = {
 			isa = PBXGroup;
 			children = (
+				A9C8D0D2242C33E600EA66FD /* CONVID-19-NADebug.entitlements */,
+				A91F8466243BEC4500CF8B81 /* Location */,
+				A99CB6692424108E0077A185 /* Models */,
+				A99CB66424240EB00077A185 /* Extension */,
 				A9A226CC24219B7F00BAF996 /* AppDelegate.swift */,
 				A9A226CE24219B7F00BAF996 /* SceneDelegate.swift */,
 				A9A226D024219B7F00BAF996 /* ContentView.swift */,
+				A91F845A2437FF0300CF8B81 /* SettingView.swift */,
+				A91F845C243820AF00CF8B81 /* SettingStore.swift */,
 				A9A226D224219B8300BAF996 /* Assets.xcassets */,
 				A9A226D724219B8300BAF996 /* LaunchScreen.storyboard */,
 				A9A226DA24219B8300BAF996 /* Info.plist */,
@@ -136,7 +288,41 @@
 			path = "CONVID-19-NAUITests";
 			sourceTree = "<group>";
 		};
+		A9C8D0AC242AA32E00EA66FD /* CONVID-19 */ = {
+			isa = PBXGroup;
+			children = (
+				A9C8D0D3242C342100EA66FD /* CONVID-19Debug.entitlements */,
+				A9C8D0AD242AA32E00EA66FD /* TodayViewController.swift */,
+				A9C8D0AF242AA32E00EA66FD /* MainInterface.storyboard */,
+				A9C8D0B2242AA32E00EA66FD /* Info.plist */,
+			);
+			path = "CONVID-19";
+			sourceTree = "<group>";
+		};
+		A9C8D0BF242AE8EA00EA66FD /* CONVID-19DataKit */ = {
+			isa = PBXGroup;
+			children = (
+				A99CB66A242410EB0077A185 /* ConvidDataStore.swift */,
+				A99CB66524240EDE0077A185 /* Date+Ext.swift */,
+				A9E43461243E2F6D005FA36C /* Helper.swift */,
+				A9C8D0C0242AE8EA00EA66FD /* CONVID_19DataKit.h */,
+				A9C8D0C1242AE8EA00EA66FD /* Info.plist */,
+			);
+			path = "CONVID-19DataKit";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A9C8D0B9242AE8EA00EA66FD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9C8D0C2242AE8EA00EA66FD /* CONVID_19DataKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		A9A226C824219B7F00BAF996 /* CONVID-19-NA */ = {
@@ -146,10 +332,14 @@
 				A9A226C524219B7F00BAF996 /* Sources */,
 				A9A226C624219B7F00BAF996 /* Frameworks */,
 				A9A226C724219B7F00BAF996 /* Resources */,
+				A99CB68124255CBE0077A185 /* Embed App Extensions */,
+				A9C8D0CA242AE8EA00EA66FD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A9C8D0B4242AA32E00EA66FD /* PBXTargetDependency */,
+				A9C8D0C4242AE8EA00EA66FD /* PBXTargetDependency */,
 			);
 			name = "CONVID-19-NA";
 			productName = "CONVID-19-NA";
@@ -192,13 +382,50 @@
 			productReference = A9A226EA24219B8300BAF996 /* CONVID-19-NAUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		A9C8D0A9242AA32E00EA66FD /* CONVID-19 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9C8D0B8242AA32E00EA66FD /* Build configuration list for PBXNativeTarget "CONVID-19" */;
+			buildPhases = (
+				A9C8D0A6242AA32E00EA66FD /* Sources */,
+				A9C8D0A7242AA32E00EA66FD /* Frameworks */,
+				A9C8D0A8242AA32E00EA66FD /* Resources */,
+				A9C8D0D1242B81FF00EA66FD /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9C8D0D0242B81FF00EA66FD /* PBXTargetDependency */,
+			);
+			name = "CONVID-19";
+			productName = "CONVID-19";
+			productReference = A9C8D0AA242AA32E00EA66FD /* CONVID-19.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		A9C8D0BD242AE8EA00EA66FD /* CONVID-19DataKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9C8D0C7242AE8EA00EA66FD /* Build configuration list for PBXNativeTarget "CONVID-19DataKit" */;
+			buildPhases = (
+				A9C8D0B9242AE8EA00EA66FD /* Headers */,
+				A9C8D0BA242AE8EA00EA66FD /* Sources */,
+				A9C8D0BB242AE8EA00EA66FD /* Frameworks */,
+				A9C8D0BC242AE8EA00EA66FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CONVID-19DataKit";
+			productName = "CONVID-19DataKit";
+			productReference = A9C8D0BE242AE8EA00EA66FD /* CONVID_19DataKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A9A226C124219B7F00BAF996 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = ARMSTRONG;
 				TargetAttributes = {
@@ -212,6 +439,12 @@
 					A9A226E924219B8300BAF996 = {
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = A9A226C824219B7F00BAF996;
+					};
+					A9C8D0A9242AA32E00EA66FD = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					A9C8D0BD242AE8EA00EA66FD = {
+						CreatedOnToolsVersion = 11.4;
 					};
 				};
 			};
@@ -231,6 +464,8 @@
 				A9A226C824219B7F00BAF996 /* CONVID-19-NA */,
 				A9A226DE24219B8300BAF996 /* CONVID-19-NATests */,
 				A9A226E924219B8300BAF996 /* CONVID-19-NAUITests */,
+				A9C8D0A9242AA32E00EA66FD /* CONVID-19 */,
+				A9C8D0BD242AE8EA00EA66FD /* CONVID-19DataKit */,
 			);
 		};
 /* End PBXProject section */
@@ -260,6 +495,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A9C8D0A8242AA32E00EA66FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9C8D0B1242AA32E00EA66FD /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9C8D0BC242AE8EA00EA66FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -268,8 +518,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9A226CD24219B7F00BAF996 /* AppDelegate.swift in Sources */,
+				A91F845B2437FF0300CF8B81 /* SettingView.swift in Sources */,
 				A9A226CF24219B7F00BAF996 /* SceneDelegate.swift in Sources */,
+				A9E43459243CA669005FA36C /* LocationMgr.swift in Sources */,
 				A9A226D124219B7F00BAF996 /* ContentView.swift in Sources */,
+				A91F8461243A47CC00CF8B81 /* Setting.swift in Sources */,
+				A91F845D243820AF00CF8B81 /* SettingStore.swift in Sources */,
+				A99CB66824240F1B0077A185 /* NumberFormatter+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +544,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A9C8D0A6242AA32E00EA66FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9C8D0AE242AA32E00EA66FD /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9C8D0BA242AE8EA00EA66FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9C8D0CB242AEA3000EA66FD /* ConvidDataStore.swift in Sources */,
+				A9C8D0CC242AEA5300EA66FD /* Date+Ext.swift in Sources */,
+				A9E43462243E2F6D005FA36C /* Helper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -302,6 +575,21 @@
 			target = A9A226C824219B7F00BAF996 /* CONVID-19-NA */;
 			targetProxy = A9A226EB24219B8300BAF996 /* PBXContainerItemProxy */;
 		};
+		A9C8D0B4242AA32E00EA66FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9C8D0A9242AA32E00EA66FD /* CONVID-19 */;
+			targetProxy = A9C8D0B3242AA32E00EA66FD /* PBXContainerItemProxy */;
+		};
+		A9C8D0C4242AE8EA00EA66FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9C8D0BD242AE8EA00EA66FD /* CONVID-19DataKit */;
+			targetProxy = A9C8D0C3242AE8EA00EA66FD /* PBXContainerItemProxy */;
+		};
+		A9C8D0D0242B81FF00EA66FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9C8D0BD242AE8EA00EA66FD /* CONVID-19DataKit */;
+			targetProxy = A9C8D0CF242B81FF00EA66FD /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -311,6 +599,14 @@
 				A9A226D824219B8300BAF996 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A9C8D0AF242AA32E00EA66FD /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9C8D0B0242AA32E00EA66FD /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -366,7 +662,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +716,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -433,40 +729,43 @@
 		A9A226F424219B8300BAF996 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "CONVID-19-NA/CONVID-19-NADebug.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CONVID-19-NA/Preview Content\"";
-				DEVELOPMENT_TEAM = 5JFJH6D423;
+				DEVELOPMENT_TEAM = V4NY82VEXF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "CONVID-19-NA/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrongmobile.CONVID-19-NA";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrongsoftwarellc.CONVID-19-NA";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		A9A226F524219B8300BAF996 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CONVID-19-NA/Preview Content\"";
-				DEVELOPMENT_TEAM = 5JFJH6D423;
+				DEVELOPMENT_TEAM = V4NY82VEXF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "CONVID-19-NA/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrongmobile.CONVID-19-NA";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrongsoftwarellc.CONVID-19-NA";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -554,6 +853,107 @@
 			};
 			name = Release;
 		};
+		A9C8D0B6242AA32E00EA66FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "CONVID-19/CONVID-19Debug.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V4NY82VEXF;
+				INFOPLIST_FILE = "CONVID-19/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrongsoftwarellc.CONVID-19-NA.CONVID-19";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A9C8D0B7242AA32E00EA66FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V4NY82VEXF;
+				INFOPLIST_FILE = "CONVID-19/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrongsoftwarellc.CONVID-19-NA.CONVID-19";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A9C8D0C8242AE8EA00EA66FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = V4NY82VEXF;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "CONVID-19DataKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrongmobile.CONVID-19DataKit";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A9C8D0C9242AE8EA00EA66FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = V4NY82VEXF;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "CONVID-19DataKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrongmobile.CONVID-19DataKit";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -589,6 +989,24 @@
 			buildConfigurations = (
 				A9A226FA24219B8300BAF996 /* Debug */,
 				A9A226FB24219B8300BAF996 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9C8D0B8242AA32E00EA66FD /* Build configuration list for PBXNativeTarget "CONVID-19" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9C8D0B6242AA32E00EA66FD /* Debug */,
+				A9C8D0B7242AA32E00EA66FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9C8D0C7242AE8EA00EA66FD /* Build configuration list for PBXNativeTarget "CONVID-19DataKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9C8D0C8242AE8EA00EA66FD /* Debug */,
+				A9C8D0C9242AE8EA00EA66FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
