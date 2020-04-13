@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import CONVID_19DataKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,12 +20,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView().environmentObject(Setting(selectedState: "", selectedCounty: "", useCurrentLocation: false))
+        let contentView = ContentView().environmentObject(Setting()).environmentObject(NetworkManager())
+        
+        // let refreshContentView = RefreshContentView().environmentObject(NetworkManager())
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: contentView)
+            // window.rootViewController = UIHostingController(rootView: refreshContentView)
             self.window = window
             window.makeKeyAndVisible()
         }

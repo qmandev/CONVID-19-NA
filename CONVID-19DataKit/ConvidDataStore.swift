@@ -113,11 +113,15 @@ public class ConvidData : Identifiable {
 public class NetworkManager : ObservableObject {
     
     public init() {
-
-        preloadData(checkedDate: Date.today.string(with: "MM-dd-yyyy"))
-        
-        if (self.convidDataDictionary.count < 1) {
-            preloadData(checkedDate: Date.yesterday.string(with: "MM-dd-yyyy"))
+        self.load()
+    }
+    
+    @Published public var loading: Bool = false {
+        didSet {
+            if oldValue == false && loading == true {
+                self.convidDataDictionary.removeAll()  // clear out when refresh
+                self.load()
+            }
         }
     }
 
@@ -147,6 +151,12 @@ public class NetworkManager : ObservableObject {
                     // To handle the CSV row with the first column been ""
                     if (line.first == delimiter.first) {
                         values.append("Unassigned")
+                    }
+                    
+                    // To handle the CSV row for US recovery with the first and second column been ""
+                    // It will add "Unassigned" above
+                    if (line.first == delimiter.first && line.contains("Recovered") && line.contains("US")) {
+                        values.append("Recovered")
                     }
                     
                     // For a line with double quotes
@@ -190,16 +200,25 @@ public class NetworkManager : ObservableObject {
                     if ( values[0] == "41059") {
                         print( values)
                     }*/
+
+                    // Patch for Diamond Princess, Grand Princess
+                    if ( values.count == 9 && values[2] == "US") {
+                        values.insert(values[1], at: 1) // insert missing Latitude
+                    }
+                    
+                    // Patch for missing Latitude and Longitude in CSV
+                    if ( values.count == 10 && values[3] == "US") {
+                        values.insert("0", at: 5) // insert missing Latitude
+                        values.insert("1", at: 5) // insert missing Longitude
+                    }
+                    
+                    // Patch for "Guam","Northern Mariana Islands","Puerto Rico","Virgin Islands"
+                    if ( values.count == 11 && values[2] == "US") {
+                        values.insert("Unassigned", at: 1)
+                    }
                     
                     // Put the values into the tuple and add it to the items array
                     if ( values.count == 12 && values[3] == "US") {
-                        
-                        // Path for missing Latitude and Longitude in CSV
-                        if ( values.count == 10) {
-                            values.insert("0", at: 4) // insert missing Latitude
-                            values.insert("1", at: 4) // insert missing Longitude
-                        }
-                        
                         let item = (FIPS: values[0], Admin2: values[1], Province_State: values[2],
                         Country_Region: values[3], Last_Update: values[4], Lat: values[5], Long_: values[6], Confirmed: values[7], Deaths: values[8],
                         Recovered: values[9], Active: values[10], Combined_Key: values[11])
@@ -213,8 +232,12 @@ public class NetworkManager : ObservableObject {
                         
                         let amin2 : Admin2Data = Admin2Data(FIPS: values[0], Admin2: values[1], Confirmed: Int(values[7]) ?? 0, Deaths: Int(values[8]) ?? 0, Recovered: Int(values[9]) ?? 0, Active: Int(values[10]) ?? 0, Latitude: Double(values[5]) ?? 0.0, Longitude: Double(values[6]) ?? 0.0, Combined_Key: values[11])
                         
-                        let stateCode = Helper.app.nameToCode(name: values[2])
-                        // check if he convidDataDictionary Dictionary is nil
+                        var stateCode = Helper.app.nameToCode(name: values[2])
+                        
+                        if (stateCode == "") {
+                            stateCode = "Cruise"
+                        }
+                        // check if the convidDataDictionary Dictionary is nil
                         if (self.convidDataDictionary[stateCode] != nil ) {
                             // check if he Admin2Data Array is empty
                             self.convidDataDictionary[stateCode]?.Admin2DataList.append(amin2)
@@ -232,6 +255,33 @@ public class NetworkManager : ObservableObject {
         }
         
         return items
+    }
+    
+    // invoked in Init() and Loading property to refreshScrollView
+    func load () {
+        // Simulate async task
+        DispatchQueue.main.async() {
+            
+            self.preloadData(checkedDate: Date.today.string(with: "MM-dd-yyyy"))
+            
+            if (self.convidDataDictionary.count < 1) {
+                self.preloadData(checkedDate: Date.yesterday.string(with: "MM-dd-yyyy"))
+            }
+            
+            // reset loading flag
+            self.loading = false
+        }
+    }
+    
+    func loadBAK () {
+        preloadData(checkedDate: Date.today.string(with: "MM-dd-yyyy"))
+        
+        if (self.convidDataDictionary.count < 1) {
+            preloadData(checkedDate: Date.yesterday.string(with: "MM-dd-yyyy"))
+        }
+        
+        // reset loading flag
+        self.loading = false
     }
     
     func preloadData(checkedDate :String) {

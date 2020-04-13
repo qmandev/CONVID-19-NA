@@ -13,7 +13,7 @@ final class SettingStore: ObservableObject {
     
     var defaults: UserDefaults
     
-    init(defaults: UserDefaults = .standard) {
+    init(defaults: UserDefaults = UserDefaults(suiteName: "group.com.armstrongsoftwarellc.CONVID-19-NA")!) {
         
         self.defaults = defaults
         

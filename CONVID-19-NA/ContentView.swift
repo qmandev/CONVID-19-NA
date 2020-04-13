@@ -12,26 +12,42 @@ import CONVID_19DataKit
 struct ContentView: View {
 
     let today : String = Date.today.string(with: "MM-dd-yyyy")
-    // let Province_State: String
-    // let Admin2: String
-    // let Admin2 = "Middlesex"
+
     let UnassignedAdmin2 = "Unassigned"
     
     private var Province_State_Full_Name: String {
         //return self.setting.selectedState ?? "No State Chosen"
-        return Helper.app.codeToName(code: self.lm.currentStateCode ?? "No State")
+        if (self.setting.useCurrentLocation == true ) {
+            
+            let stateName = Helper.app.codeToName(code: self.lm.currentStateCode ?? "No State")
+            self.setting.gpsLocationState = stateName
+            
+            return stateName
+        }
+        else {
+            return self.setting.selectedState
+        }
     }
     
     private var Province_State_Code: String {
-        //return self.setting.selectedState ?? "No State Chosen"
         
-        return self.lm.currentStateCode ?? "No State"
+        if (self.setting.useCurrentLocation == true ) {
+            
+            return self.lm.currentStateCode ?? "No State Found"
+        } else {
+            return Helper.app.nameToCode(name: self.setting.selectedState)
+        }
     }
     
     private var Admin2: String {
-        //return self.setting.selectedCounty ?? "No State Chosen"
-        
-        return self.lm.currentCounty ?? "County"
+
+        if (self.setting.useCurrentLocation == true ) {
+            let countyName = self.lm.currentCounty ?? "No County Found"
+            self.setting.gpsLocationCounty = countyName
+            return countyName
+        } else {
+            return self.setting.selectedCounty
+        }
     }
     
     private var USConfirmed: Int {
@@ -59,6 +75,7 @@ struct ContentView: View {
     }
     
     private var LastUpdate: Date {
+        
         return networkManager.convidDataDictionary[Province_State_Code]?.LastUpdate ?? Date.yesterday
     }
     
@@ -103,20 +120,32 @@ struct ContentView: View {
         return admin2Data?[0].Recovered ?? 0
     }
     
-    @ObservedObject var networkManager = NetworkManager()
+    // @ObservedObject var networkManager = NetworkManager()
     
     @ObservedObject var lm = LocationManager()
 
-    var placemark: String { return("\(lm.placemark?.description ?? "XXX")") }
-    var status: String { return("\(lm.status?.rawValue ?? 0)") }
+    var gpsAuthorized: Bool {
+        guard let authorized = lm.status?.rawValue else {
+            self.setting.useCurrentLocation = false
+            return false
+        }
+        
+        self.setting.useCurrentLocation = authorized == 4 ? true : false
+        
+        return authorized == 4 ? true : false
+    }
+    
     var currentState: String { return("\(lm.placemark?.administrativeArea ?? "No State from current location")") }
     var currentCounty: String { return("\(lm.placemark?.subAdministrativeArea ?? "No County from current location")") }
     
     @State private var showSettings: Bool = false
+    @State private var showInfos: Bool = false
+    
+    @EnvironmentObject var networkManager : NetworkManager
     
     @EnvironmentObject var setting: Setting
     
-    var settingStore: SettingStore
+    //var settingStore: SettingStore
     
     private let cellHeight: CGFloat = 30
 
@@ -127,21 +156,18 @@ struct ContentView: View {
 
         //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.gray]
-        
-        self.settingStore = SettingStore()
     }
     
     var body: some View {
 
         NavigationView  {
             VStack {
-
                 /*
                 Section {
-                    Text("Status, \(self.status)")
+                    Text("Status, \(self.gpsAuthorized.description)")
                     Text("Hello,  \(self.currentState)")
                     Text("Hello,  \(self.currentCounty)")
-                }*/
+                } */
                 
                 Text(today)
                     .font(.system(Font.TextStyle.callout, design: .rounded))
@@ -163,7 +189,7 @@ struct ContentView: View {
                     }.padding(.bottom)
                 }
                 
-                Section(header: Text("State: \(Province_State_Full_Name)")
+                Section(header: Text("State/Territory: \(Province_State_Full_Name)")
                     .font(.system(.headline, design: .rounded))
                     .fontWeight(.bold)
                     .foregroundColor(Color("TotalBalanceCard"))
@@ -196,36 +222,51 @@ struct ContentView: View {
                                 
                 Spacer()
                 
-                Text("Updated: \(LastUpdate)   Source: John Hopkins CSSE")
+                Text("Updated: \(LastUpdate)      Source: John Hopkins CSSE")
                     .font(.footnote)
                     .fontWeight(.light)
+                    .allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 
                 Spacer()
             }
             .padding(.horizontal)
             .listRowInsets(EdgeInsets())
-            .navigationBarTitle("CONVID-19 USA" )
-            .navigationBarItems(trailing:
-            
+            .navigationBarTitle("CONVID-19 USA", displayMode: .inline )
+            .navigationBarItems(leading:
                 Button(action: {
-                    self.showSettings = true
+                    self.showInfos = true
                 }, label: {
-                    Image(systemName: "gear").font(.title)
-                        .foregroundColor(.black)
-                })
-            )
-            .sheet(isPresented: $showSettings) {
-                SettingView(settingStore: self.settingStore).environmentObject(self.setting)
-            }
-            
-            //.onAppear { self.networkManager.fetchCSVData()}
-        }  // Navigation view
+                    Image("help-2").resizable().scaledToFill().frame(width: 30, height: 40)                  .foregroundColor(.primary).aspectRatio(contentMode: .fill).clipShape(Circle())
+                }).sheet(isPresented: $showInfos) {
+                    InfoView()
+                },
+                trailing:
+                
+                HStack(spacing: 10) {
+                    Button(action: {
+                        self.networkManager.loading = true
+                    }, label: {
+                        Image(systemName: "goforward").font(.title)
+                            .foregroundColor(.primary)
+                    }).position(x: 0, y: 7)
+                    
+                    Button(action: {
+                        self.showSettings = true
+                    }, label: {
+                        Image(systemName: "gear").font(.title)
+                            .foregroundColor(.primary)
+                    }).sheet(isPresented: $showSettings) {
+                        SettingView().environmentObject(self.setting).environmentObject(self.networkManager)
+                    }
+                }.frame(alignment: .center)
+            )  //.onAppear { self.networkManager.fetchCSVData()}
+        }// Navigation view
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(Setting(selectedState: "Massachusetts", selectedCounty: "Middlesex", useCurrentLocation: false))
+        ContentView().environmentObject(Setting()).environmentObject(NetworkManager())
     }
 }
 

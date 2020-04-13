@@ -32,7 +32,8 @@ public extension Date {
     static func fromString(string: String, with format: String = "yyyy-MM-dd") -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current
-        dateFormatter.timeZone = .current
+        // dateFormatter.timeZone = .current
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
         dateFormatter.dateFormat = format
         return dateFormatter.date(from: string)
     }

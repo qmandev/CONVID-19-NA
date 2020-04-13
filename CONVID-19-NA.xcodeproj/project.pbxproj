@@ -10,6 +10,11 @@
 		A91F845B2437FF0300CF8B81 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91F845A2437FF0300CF8B81 /* SettingView.swift */; };
 		A91F845D243820AF00CF8B81 /* SettingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91F845C243820AF00CF8B81 /* SettingStore.swift */; };
 		A91F8461243A47CC00CF8B81 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91F8460243A47CC00CF8B81 /* Setting.swift */; };
+		A96DDE9C2440FE98003005E3 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96DDE9B2440FE98003005E3 /* InfoView.swift */; };
+		A96DDE9F244209C9003005E3 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96DDE9E244209C9003005E3 /* RefreshableScrollView.swift */; };
+		A96DDEA82442AF89003005E3 /* RefreshContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96DDEA72442AF89003005E3 /* RefreshContentView.swift */; };
+		A96DDEA92443F92F003005E3 /* CONVID_19DataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C8D0BE242AE8EA00EA66FD /* CONVID_19DataKit.framework */; };
+		A96DDEAA2443F92F003005E3 /* CONVID_19DataKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9C8D0BE242AE8EA00EA66FD /* CONVID_19DataKit.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A99CB66824240F1B0077A185 /* NumberFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CB66724240F1B0077A185 /* NumberFormatter+Ext.swift */; };
 		A9A226CD24219B7F00BAF996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A226CC24219B7F00BAF996 /* AppDelegate.swift */; };
 		A9A226CF24219B7F00BAF996 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A226CE24219B7F00BAF996 /* SceneDelegate.swift */; };
@@ -28,8 +33,6 @@
 		A9C8D0C6242AE8EA00EA66FD /* CONVID_19DataKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9C8D0BE242AE8EA00EA66FD /* CONVID_19DataKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A9C8D0CB242AEA3000EA66FD /* ConvidDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CB66A242410EB0077A185 /* ConvidDataStore.swift */; };
 		A9C8D0CC242AEA5300EA66FD /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CB66524240EDE0077A185 /* Date+Ext.swift */; };
-		A9C8D0CD242B81FF00EA66FD /* CONVID_19DataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C8D0BE242AE8EA00EA66FD /* CONVID_19DataKit.framework */; };
-		A9C8D0CE242B81FF00EA66FD /* CONVID_19DataKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9C8D0BE242AE8EA00EA66FD /* CONVID_19DataKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A9E43459243CA669005FA36C /* LocationMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E43458243CA669005FA36C /* LocationMgr.swift */; };
 		A9E43462243E2F6D005FA36C /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E43461243E2F6D005FA36C /* Helper.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +76,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		A96DDEAB2443F92F003005E3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A96DDEAA2443F92F003005E3 /* CONVID_19DataKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A99CB68124255CBE0077A185 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -95,23 +109,15 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A9C8D0D1242B81FF00EA66FD /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A9C8D0CE242B81FF00EA66FD /* CONVID_19DataKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A91F845A2437FF0300CF8B81 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		A91F845C243820AF00CF8B81 /* SettingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingStore.swift; sourceTree = "<group>"; };
 		A91F8460243A47CC00CF8B81 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		A96DDE9B2440FE98003005E3 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		A96DDE9E244209C9003005E3 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
+		A96DDEA72442AF89003005E3 /* RefreshContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshContentView.swift; sourceTree = "<group>"; };
 		A99CB66524240EDE0077A185 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		A99CB66724240F1B0077A185 /* NumberFormatter+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Ext.swift"; sourceTree = "<group>"; };
 		A99CB66A242410EB0077A185 /* ConvidDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvidDataStore.swift; sourceTree = "<group>"; };
@@ -170,7 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9C8D0CD242B81FF00EA66FD /* CONVID_19DataKit.framework in Frameworks */,
+				A96DDEA92443F92F003005E3 /* CONVID_19DataKit.framework in Frameworks */,
 				A9C8D0AB242AA32E00EA66FD /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +197,14 @@
 				A9E43458243CA669005FA36C /* LocationMgr.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		A96DDE9D24420981003005E3 /* RefreshableScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				A96DDE9E244209C9003005E3 /* RefreshableScrollView.swift */,
+			);
+			path = RefreshableScrollView;
 			sourceTree = "<group>";
 		};
 		A99CB66424240EB00077A185 /* Extension */ = {
@@ -246,14 +260,17 @@
 			isa = PBXGroup;
 			children = (
 				A9C8D0D2242C33E600EA66FD /* CONVID-19-NADebug.entitlements */,
+				A96DDE9D24420981003005E3 /* RefreshableScrollView */,
 				A91F8466243BEC4500CF8B81 /* Location */,
 				A99CB6692424108E0077A185 /* Models */,
 				A99CB66424240EB00077A185 /* Extension */,
 				A9A226CC24219B7F00BAF996 /* AppDelegate.swift */,
 				A9A226CE24219B7F00BAF996 /* SceneDelegate.swift */,
+				A96DDEA72442AF89003005E3 /* RefreshContentView.swift */,
 				A9A226D024219B7F00BAF996 /* ContentView.swift */,
 				A91F845A2437FF0300CF8B81 /* SettingView.swift */,
 				A91F845C243820AF00CF8B81 /* SettingStore.swift */,
+				A96DDE9B2440FE98003005E3 /* InfoView.swift */,
 				A9A226D224219B8300BAF996 /* Assets.xcassets */,
 				A9A226D724219B8300BAF996 /* LaunchScreen.storyboard */,
 				A9A226DA24219B8300BAF996 /* Info.plist */,
@@ -389,7 +406,7 @@
 				A9C8D0A6242AA32E00EA66FD /* Sources */,
 				A9C8D0A7242AA32E00EA66FD /* Frameworks */,
 				A9C8D0A8242AA32E00EA66FD /* Resources */,
-				A9C8D0D1242B81FF00EA66FD /* Embed Frameworks */,
+				A96DDEAB2443F92F003005E3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -518,13 +535,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9A226CD24219B7F00BAF996 /* AppDelegate.swift in Sources */,
+				A96DDEA82442AF89003005E3 /* RefreshContentView.swift in Sources */,
 				A91F845B2437FF0300CF8B81 /* SettingView.swift in Sources */,
 				A9A226CF24219B7F00BAF996 /* SceneDelegate.swift in Sources */,
 				A9E43459243CA669005FA36C /* LocationMgr.swift in Sources */,
 				A9A226D124219B7F00BAF996 /* ContentView.swift in Sources */,
 				A91F8461243A47CC00CF8B81 /* Setting.swift in Sources */,
 				A91F845D243820AF00CF8B81 /* SettingStore.swift in Sources */,
+				A96DDE9C2440FE98003005E3 /* InfoView.swift in Sources */,
 				A99CB66824240F1B0077A185 /* NumberFormatter+Ext.swift in Sources */,
+				A96DDE9F244209C9003005E3 /* RefreshableScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -866,7 +886,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrongsoftwarellc.CONVID-19-NA.CONVID-19";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrongsoftwarellc.CONVID-19-NA.WigetExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -886,7 +906,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrongsoftwarellc.CONVID-19-NA.CONVID-19";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.armstrongsoftwarellc.CONVID-19-NA.WigetExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
