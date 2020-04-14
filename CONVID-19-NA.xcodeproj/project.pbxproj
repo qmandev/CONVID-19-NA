@@ -14,7 +14,6 @@
 		A96DDE9F244209C9003005E3 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96DDE9E244209C9003005E3 /* RefreshableScrollView.swift */; };
 		A96DDEA82442AF89003005E3 /* RefreshContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96DDEA72442AF89003005E3 /* RefreshContentView.swift */; };
 		A96DDEA92443F92F003005E3 /* CONVID_19DataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C8D0BE242AE8EA00EA66FD /* CONVID_19DataKit.framework */; };
-		A96DDEAA2443F92F003005E3 /* CONVID_19DataKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A9C8D0BE242AE8EA00EA66FD /* CONVID_19DataKit.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A99CB66824240F1B0077A185 /* NumberFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CB66724240F1B0077A185 /* NumberFormatter+Ext.swift */; };
 		A9A226CD24219B7F00BAF996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A226CC24219B7F00BAF996 /* AppDelegate.swift */; };
 		A9A226CF24219B7F00BAF996 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A226CE24219B7F00BAF996 /* SceneDelegate.swift */; };
@@ -82,7 +81,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A96DDEAA2443F92F003005E3 /* CONVID_19DataKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;

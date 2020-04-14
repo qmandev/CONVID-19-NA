@@ -64,7 +64,7 @@ struct InfoView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .multilineTextAlignment(.leading)
                     
-                    Text("Full Global ineractive Map at https://coronavirus.jhu.edu/map.html")
+                    Text("Full Global interactive Map at https://coronavirus.jhu.edu/map.html")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .multilineTextAlignment(.leading)
                     
