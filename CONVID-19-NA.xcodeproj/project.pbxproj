@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A902E2DD2451CBC900CF84B1 /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902E2DC2451CBC900CF84B1 /* PullToRefresh.swift */; };
+		A902E2DF2451CE4300CF84B1 /* NavFreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902E2DE2451CE4300CF84B1 /* NavFreshableScrollView.swift */; };
 		A91F845B2437FF0300CF8B81 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91F845A2437FF0300CF8B81 /* SettingView.swift */; };
 		A91F845D243820AF00CF8B81 /* SettingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91F845C243820AF00CF8B81 /* SettingStore.swift */; };
 		A91F8461243A47CC00CF8B81 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91F8460243A47CC00CF8B81 /* Setting.swift */; };
 		A96DDE9C2440FE98003005E3 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96DDE9B2440FE98003005E3 /* InfoView.swift */; };
-		A96DDE9F244209C9003005E3 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96DDE9E244209C9003005E3 /* RefreshableScrollView.swift */; };
-		A96DDEA82442AF89003005E3 /* RefreshContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96DDEA72442AF89003005E3 /* RefreshContentView.swift */; };
 		A96DDEA92443F92F003005E3 /* CONVID_19DataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C8D0BE242AE8EA00EA66FD /* CONVID_19DataKit.framework */; };
 		A99CB66824240F1B0077A185 /* NumberFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CB66724240F1B0077A185 /* NumberFormatter+Ext.swift */; };
 		A9A226CD24219B7F00BAF996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A226CC24219B7F00BAF996 /* AppDelegate.swift */; };
@@ -110,12 +110,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A902E2DC2451CBC900CF84B1 /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
+		A902E2DE2451CE4300CF84B1 /* NavFreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavFreshableScrollView.swift; sourceTree = "<group>"; };
 		A91F845A2437FF0300CF8B81 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		A91F845C243820AF00CF8B81 /* SettingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingStore.swift; sourceTree = "<group>"; };
 		A91F8460243A47CC00CF8B81 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		A96DDE9B2440FE98003005E3 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		A96DDE9E244209C9003005E3 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
-		A96DDEA72442AF89003005E3 /* RefreshContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshContentView.swift; sourceTree = "<group>"; };
 		A99CB66524240EDE0077A185 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		A99CB66724240F1B0077A185 /* NumberFormatter+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Ext.swift"; sourceTree = "<group>"; };
 		A99CB66A242410EB0077A185 /* ConvidDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvidDataStore.swift; sourceTree = "<group>"; };
@@ -189,6 +189,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A902E2DB2451CB8500CF84B1 /* RefreshableNaviView */ = {
+			isa = PBXGroup;
+			children = (
+				A902E2DC2451CBC900CF84B1 /* PullToRefresh.swift */,
+				A902E2DE2451CE4300CF84B1 /* NavFreshableScrollView.swift */,
+			);
+			path = RefreshableNaviView;
+			sourceTree = "<group>";
+		};
 		A91F8466243BEC4500CF8B81 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,7 +209,6 @@
 		A96DDE9D24420981003005E3 /* RefreshableScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				A96DDE9E244209C9003005E3 /* RefreshableScrollView.swift */,
 			);
 			path = RefreshableScrollView;
 			sourceTree = "<group>";
@@ -258,13 +266,13 @@
 			isa = PBXGroup;
 			children = (
 				A9C8D0D2242C33E600EA66FD /* CONVID-19-NADebug.entitlements */,
+				A902E2DB2451CB8500CF84B1 /* RefreshableNaviView */,
 				A96DDE9D24420981003005E3 /* RefreshableScrollView */,
 				A91F8466243BEC4500CF8B81 /* Location */,
 				A99CB6692424108E0077A185 /* Models */,
 				A99CB66424240EB00077A185 /* Extension */,
 				A9A226CC24219B7F00BAF996 /* AppDelegate.swift */,
 				A9A226CE24219B7F00BAF996 /* SceneDelegate.swift */,
-				A96DDEA72442AF89003005E3 /* RefreshContentView.swift */,
 				A9A226D024219B7F00BAF996 /* ContentView.swift */,
 				A91F845A2437FF0300CF8B81 /* SettingView.swift */,
 				A91F845C243820AF00CF8B81 /* SettingStore.swift */,
@@ -533,16 +541,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9A226CD24219B7F00BAF996 /* AppDelegate.swift in Sources */,
-				A96DDEA82442AF89003005E3 /* RefreshContentView.swift in Sources */,
 				A91F845B2437FF0300CF8B81 /* SettingView.swift in Sources */,
+				A902E2DD2451CBC900CF84B1 /* PullToRefresh.swift in Sources */,
 				A9A226CF24219B7F00BAF996 /* SceneDelegate.swift in Sources */,
+				A902E2DF2451CE4300CF84B1 /* NavFreshableScrollView.swift in Sources */,
 				A9E43459243CA669005FA36C /* LocationMgr.swift in Sources */,
 				A9A226D124219B7F00BAF996 /* ContentView.swift in Sources */,
 				A91F8461243A47CC00CF8B81 /* Setting.swift in Sources */,
 				A91F845D243820AF00CF8B81 /* SettingStore.swift in Sources */,
 				A96DDE9C2440FE98003005E3 /* InfoView.swift in Sources */,
 				A99CB66824240F1B0077A185 /* NumberFormatter+Ext.swift in Sources */,
-				A96DDE9F244209C9003005E3 /* RefreshableScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

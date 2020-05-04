@@ -9,6 +9,7 @@
 import SwiftUI
 import CONVID_19DataKit
 
+
 struct ContentView: View {
 
     let today : String = Date.today.string(with: "MM-dd-yyyy")
@@ -160,7 +161,11 @@ struct ContentView: View {
     
     var body: some View {
 
-        NavigationView  {
+        RefreshableNavigationView(title: "CONVID", action:{
+            self.networkManager.loading = true
+        })
+        {
+        //NavigationView  {
             VStack {
                 /*
                 Section {
@@ -169,36 +174,36 @@ struct ContentView: View {
                     Text("Hello,  \(self.currentCounty)")
                 } */
                 
-                Text(today)
+                Text(self.today)
                     .font(.system(Font.TextStyle.callout, design: .rounded))
                     .fontWeight(.bold)
                     .foregroundColor(Color("TotalBalanceCard"))
                     .padding(.vertical)
 
-                Section(header: Text("County: \(Admin2)")
+                Section(header: Text("County: \(self.Admin2)")
                     .font(.system(.headline, design: .rounded))
                     .fontWeight(.bold)
                     .foregroundColor(Color("TotalBalanceCard"))
                 
                 ) {
                     HStack(spacing: 15) {
-                        TileCard(tileName: "Confirmed", tileQuote: Admin2Confirmed, tileHeight: cellHeight, tileColor: "Card-Confirmed")
+                        TileCard(tileName: "Confirmed", tileQuote: self.Admin2Confirmed, tileHeight: self.cellHeight, tileColor: "Card-Confirmed")
 
-                        TileCard(tileName: "Deaths", tileQuote: Admin2Deaths, tileHeight: cellHeight, tileColor: "Card-Deaths")
+                        TileCard(tileName: "Deaths", tileQuote: self.Admin2Deaths, tileHeight: self.cellHeight, tileColor: "Card-Deaths")
                         
                     }.padding(.bottom)
                 }
                 
-                Section(header: Text("State/Territory: \(Province_State_Full_Name)")
+                Section(header: Text("State/Territory: \(self.Province_State_Full_Name)")
                     .font(.system(.headline, design: .rounded))
                     .fontWeight(.bold)
                     .foregroundColor(Color("TotalBalanceCard"))
                 ) {
                     HStack(spacing: 15) {
-                        TileCard(tileName: "Confirmed", tileQuote: Confirmed, tileHeight: cellHeight, tileColor: "Card-Confirmed")
+                        TileCard(tileName: "Confirmed", tileQuote: self.Confirmed, tileHeight: self.cellHeight, tileColor: "Card-Confirmed")
 
                         TileCard(tileName: "Deaths", tileQuote:
-                            Deaths, tileHeight: cellHeight, tileColor: "Card-Deaths")
+                            self.Deaths, tileHeight: self.cellHeight, tileColor: "Card-Deaths")
                         
                     }
                     .padding(.bottom)
@@ -210,19 +215,19 @@ struct ContentView: View {
                     .foregroundColor(Color("TotalBalanceCard"))
                 ) {
                     HStack(spacing: 15) {
-                        TileCard(tileName: "Confirmed", tileQuote: USConfirmed, tileHeight: cellHeight, tileColor: "Card-Confirmed")
+                        TileCard(tileName: "Confirmed", tileQuote: self.USConfirmed, tileHeight: self.cellHeight, tileColor: "Card-Confirmed")
 
                         TileCard(tileName: "Deaths", tileQuote:
-                            USDeaths, tileHeight: cellHeight, tileColor: "Card-Deaths")
+                            self.USDeaths, tileHeight: self.cellHeight, tileColor: "Card-Deaths")
                         
-                        TileCard(tileName: "Recovered", tileQuote: USRecovered, tileHeight: cellHeight, tileColor: "Card-Recovered")
+                        TileCard(tileName: "Recovered", tileQuote: self.USRecovered, tileHeight: self.cellHeight, tileColor: "Card-Recovered")
                     }
                     .padding(.bottom)
                 }
                                 
                 Spacer()
                 
-                Text("Updated: \(LastUpdate)      Source: John Hopkins CSSE")
+                Text("Updated: \(self.LastUpdate)      Source: John Hopkins CSSE")
                     .font(.footnote)
                     .fontWeight(.light)
                     .allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
@@ -237,7 +242,7 @@ struct ContentView: View {
                     self.showInfos = true
                 }, label: {
                     Image("help-2").resizable().scaledToFill().frame(width: 30, height: 40)                  .foregroundColor(.primary).aspectRatio(contentMode: .fill).clipShape(Circle())
-                }).sheet(isPresented: $showInfos) {
+                }).sheet(isPresented: self.$showInfos) {
                     InfoView()
                 },
                 trailing:
@@ -255,7 +260,7 @@ struct ContentView: View {
                     }, label: {
                         Image(systemName: "gear").font(.title)
                             .foregroundColor(.primary)
-                    }).sheet(isPresented: $showSettings) {
+                    }).sheet(isPresented: self.$showSettings) {
                         SettingView().environmentObject(self.setting).environmentObject(self.networkManager)
                     }
                 }.frame(alignment: .center)
@@ -263,6 +268,8 @@ struct ContentView: View {
         }// Navigation view
     }
 }
+
+//}// freshView
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
