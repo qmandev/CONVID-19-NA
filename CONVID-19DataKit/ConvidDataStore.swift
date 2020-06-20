@@ -156,7 +156,7 @@ public class NetworkManager : ObservableObject {
                     // To handle the CSV row for US recovery with the first and second column been ""
                     // It will add "Unassigned" above
                     if (line.first == delimiter.first && line.contains("Recovered") && line.contains("US")) {
-                        values.append("Recovered")
+                        values.append("Recovered US")
                     }
                     
                     // For a line with double quotes
@@ -202,23 +202,30 @@ public class NetworkManager : ObservableObject {
                     }*/
 
                     // Patch for Diamond Princess, Grand Princess
-                    if ( values.count == 9 && values[2] == "US") {
-                        values.insert(values[1], at: 1) // insert missing Latitude
+                    if ( values.count == 10 && values[1] == "Grand Princess" && values[2] == "US") {
+                        values.insert(values[1], at: 1) // insert pseudo Admin2
+                        values.insert(values[1], at: 10)  // insert pseudo Incidence_Rate
+                    }
+                    
+                    // Patch for Recovered US with blank data at the last two column
+                    if ( values.count == 10 && values[3] == "US" && values[9] == "Recovered, US") {
+                        values.append(values[9]) // append a new colum, values.count ==11
+                        values.append(values[9]) // append a new colum, values.count == 12
                     }
                     
                     // Patch for missing Latitude and Longitude in CSV
-                    if ( values.count == 10 && values[3] == "US") {
+                    if ( values.count == 12 && values[3] == "US") {
                         values.insert("0", at: 5) // insert missing Latitude
                         values.insert("1", at: 5) // insert missing Longitude
                     }
                     
                     // Patch for "Guam","Northern Mariana Islands","Puerto Rico","Virgin Islands"
-                    if ( values.count == 11 && values[2] == "US") {
+                    if ( values.count == 13 && values[2] == "US") {
                         values.insert("Unassigned", at: 1)
                     }
                     
                     // Put the values into the tuple and add it to the items array
-                    if ( values.count == 12 && values[3] == "US") {
+                    if ( values.count == 14 && values[3] == "US") {
                         let item = (FIPS: values[0], Admin2: values[1], Province_State: values[2],
                         Country_Region: values[3], Last_Update: values[4], Lat: values[5], Long_: values[6], Confirmed: values[7], Deaths: values[8],
                         Recovered: values[9], Active: values[10], Combined_Key: values[11])
